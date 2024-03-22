@@ -4,8 +4,8 @@ fun main() {
     val coffeeMachine = CoffeeMachine()
 
     val name = "latte"
-    val filter: (String) -> Unit = {
-        println("Filtered $it")
+    val filter: (String) -> Unit = {argName: String ->
+        println("Filtered $argName")
     }
 
     coffeeMachine.prepareToDrink(name, filter)
