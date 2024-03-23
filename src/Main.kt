@@ -12,6 +12,10 @@ fun main() {
     coffeeMachine.prepareToDrink(name, { println("Filtered $it") })
 
     coffeeMachine.prepareToDrink(name) { println("Filtered $it") }
+
+val filter2: (String)->Unit = coffeeMachine::filter
+    coffeeMachine.prepareToDrink(name, filter2)
+
 }
 
 class CoffeeMachine {
@@ -22,6 +26,10 @@ class CoffeeMachine {
     ) {
         myFilter.invoke("$name.")
         println("Prepared $name.")
+    }
+
+    fun filter(name: String){
+        println("Filtered $name")
     }
 }
 
